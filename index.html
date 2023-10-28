@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -41,6 +40,9 @@
       border-radius: 0 !important
     }
 
+    .accordionModal {
+      margin: 0 100px; /* Adjust the margin as needed */
+    }
     .card-img-top {
       max-height: 160px;
       min-height: 160px;
@@ -310,7 +312,6 @@
     </div>
   </div>
 
-
   <div class="container-fluid container">
     <h2 class="h3">Just booked in the United States</h2>
     <br>
@@ -365,7 +366,7 @@
         <div class="carousel-item">
           <div class="col-md-10">
             <div class="card mb-10 border-10">
-              <img src="images/bike.jpg" class="card-img-top-2 br0" alt="...">
+              <img src="images/pic2.webp" class="card-img-top-2 br0" alt="...">
               <p class="small text-uppercase pb-0">Amazing Views </p>
               <div class="card-body p-0">
                 <h5 class="card-title">Stratford, Connecticut</h5>
@@ -379,7 +380,117 @@
         </div>
       </div>
     </div>
+  </div>
 
+  <br> <br> <br>
+
+    <!-- Accordion -->
+
+  <div class="accordion accordionModal" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="true" aria-controls="collapseOne">
+          FAQ#1
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <b>Requesting a refund during your stay</b>
+          <br>
+          If you’re experiencing an issue during your stay, you can ask your Host to fix it, request a partial refund, or request to cancel your reservation for a full refund. It’s important to submit your request within 24 hours of noticing the issue, and your Host will have 1 hour to respond. If they decline or don’t respond, you can ask Airbnb to step in to help. 
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+          aria-expanded="false" aria-controls="collapseTwo">
+          FAQ#2
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <b>Change the date or time of your Experience reservation</b>
+          <br>
+            You booked an Experience, but the date or time no longer works for you? Don’t worry, you don’t have to miss out! You may be able to change your reservation, depending on your Host’s availability and their cancellation policy.
+            You’ll be able to review any changes in the total cost before you finalize the change. 
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          FAQ#3
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <b>Edit a payment method for upcoming payments</b>
+          <br>
+          If you have an existing reservation with payments scheduled for a future date, such as a monthly stay, you can change the payment method for the scheduled future payments.
+          <br>
+          <b>Note:</b> The payment method can only be changed for scheduled future payments. It’s not possible to change the payment method for the initial payment made when the reservation is confirmed.
+
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          FAQ#4
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <b>If your Host cancels your reservation</b>
+          <br>
+          While it’s rare, sometimes a Host may need to cancel a reservation. We understand this can impact your plans in a big way. Rest assured that every booking made on Airbnb comes with AirCover for guests, support for guests who experience issues with their booking, including Host cancellations within 30 days of check-in.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid border-top mt-5">
+    <footer class="bg-light text-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>HouseHop</h5>
+            <p>A platform for finding and booking amazing places to stay.</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-dark">Home</a></li>
+              <li><a href="signup.html" class="text-dark">Sign up</a></li>
+              <li><a href="login.html" class="text-dark">Login</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <address>
+              <p><i class="fa fa-map-marker"></i> 57 Main Street, Boston, MA</p>
+              <p><i class="fa fa-phone"></i> +1 990-293-2459</p>
+              <p><i class="fa fa-envelope"></i> info@househop.com</p>
+            </address>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text-center">© 2023 HouseHop. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>    
+  </div>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -411,6 +522,4 @@
     });
     </script>
 </body>
-
 </html>
-

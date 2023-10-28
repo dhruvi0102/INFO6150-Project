@@ -36,6 +36,9 @@ In the provided HTML code, the following Bootstrap elements and classes are used
 7. Cards:
    - `.card`
    - `.card-img-top`
+   - `card-title`
+   - `card-text`
+   - `card-body`
 
 8. Container Elements:
    - `.container`
@@ -45,6 +48,7 @@ In the provided HTML code, the following Bootstrap elements and classes are used
    - Carousel container: `<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">`
    - Carousel items: `.carousel-item`
    - Carousel control buttons: `.carousel-control-prev`, `.carousel-control-next`
+   - Carousel Controls: `data-ride="carousel"`
 
 10. Accordion:
     - Accordion container: `<div class="accordion accordionModal" id="accordionExample">`
@@ -55,3 +59,7 @@ In the provided HTML code, the following Bootstrap elements and classes are used
 
 11. Footer:
     - `<footer class="container pt-4 my-md-5 pt-md-5">`
+    - Columns: `col-md-4`
+    - Unordered List: `list-unstyled `
+    - Font Awesome Icons: `fa fa-*`
+    - Text Alignment: `text-center`

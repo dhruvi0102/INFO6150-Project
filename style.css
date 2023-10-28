@@ -1,0 +1,56 @@
+body{
+    font-family: "Georgia";
+    font-weight: bold;
+    /* background-color: rgb(70, 25, 82); */
+    background-image: url(./hotel.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+label {	
+    float: left;
+    width: 150px;}
+#container{
+    width: 700px;
+    margin: auto;
+    float: right;
+    /* background-color: #f4f3ee; 
+    opacity: 0.7; */
+} 
+main{
+    padding: 50px;
+}
+.table{
+    border-color:#A7776D;
+    align-items: center;
+}
+table {
+    width: fit-content;
+    margin: auto;
+    text-align: left;				
+}
+table, th, td {  
+    border: none;
+}
+th{
+    background-color: #A7776D;
+    color: aliceblue;
+    text-align: center;
+}
+tr{
+    color:#A7776D;
+    background-color: seashell;   
+}
+p{
+    text-align: center;
+    font-size: large;
+}
+
+@media screen and (max-width: 600px) {
+    table {width:100%;}
+    div {width:100%;}
+    form {width:100%;}
+ }
+ @media screen and (max-width: 360px) {
+    table {width:100%;}
+}

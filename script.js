@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   
+
     function validateForm() {
       let valid = true;
   
@@ -55,6 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
   
       return valid;
     }
+
+
   
     function resetErrors() {
       const errorElements = document.getElementsByClassName("error");

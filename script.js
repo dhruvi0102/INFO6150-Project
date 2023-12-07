@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   
+
     function validateForm() {
       let valid = true;
   
@@ -55,6 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
   
       return valid;
     }
+
+
   
     function resetErrors() {
       const errorElements = document.getElementsByClassName("error");
@@ -74,6 +77,33 @@ document.addEventListener("DOMContentLoaded", function () {
         errorFirstName.style.display = "none";
       }
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const passwordInput = document.getElementById("passwordInput");
+      const passwordValidation = document.getElementById("passwordValidation");
+      const loginForm = document.getElementById("loginForm"); // reference to the form
+  
+      passwordInput.addEventListener("input", function() {
+          validatePassword();
+      });
+  
+      loginForm.addEventListener("submit", function(event) {
+          if (!validatePassword()) {
+              event.preventDefault(); // prevents the form submission
+          }
+      });
+  
+      function validatePassword() {
+          const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/; // Sample regex
+          if (!regex.test(passwordInput.value)) {
+              passwordValidation.textContent = "Password must contain at least 1 digit, 1 lowercase, 1 uppercase, and be at least 8 characters long.";
+              return false; // invalid password
+          } else {
+              passwordValidation.textContent = "";
+              return true; // valid password
+          }
+      }
+  });
   
     // Add real-time validation for the email field
     const emailInput = document.getElementById("emailId");

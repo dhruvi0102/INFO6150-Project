@@ -1,2 +1,43 @@
-# ignore ds dtore
-.DS_Store
+# Node.js
+node_modules/
+
+# macOS
+*.DS_Store
+
+# Editor/IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.iml
+
+# Compiled files
+*.log
+*.class
+*.war
+*.jar
+
+# Dependency directories
+lib/
+target/
+
+# Compiled Java bytecode
+*.class
+
+# Compiled Python bytecode
+__pycache__/
+*.pyc
+
+# Environment configuration
+.env
+
+# Build and package files
+build/
+dist/
+*.egg-info/
+
+# Miscellaneous
+*.bak
+*.swp
+Thumbs.db
+Desktop.ini

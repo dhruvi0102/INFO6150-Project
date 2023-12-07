@@ -42,7 +42,7 @@ const SideBarMenu = (props) => {
       </li>
       <li>
         <NavLink to="/fleet" style={{ color: currentTheme.color }}>
-          Fleet
+          Rentals
         </NavLink>
       </li>
       {isLoggedIn && (

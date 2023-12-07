@@ -1,11 +1,11 @@
 const express = require('express');
 const { check } = require('express-validator');
 
-const houseControllers = require('../controllers/house-controllers');
+const rentalControllers = require('../controllers/rentals-controllers');
 const fileUpload = require('../middleware/file-upload');
 const router = express.Router();
 
-// Add new house route
+// Add new rental route
 router.post('/',
     // fileUpload.single('image'),
     [
@@ -16,19 +16,19 @@ router.post('/',
         check('capacity', 'Please enter a valid capacity').not().isEmpty().isNumeric().trim().isInt({ gt: 0 }),
         check('image', 'Please upload an image').not().isEmpty().trim(),
     ],
-    houseControllers.postHouse
+    rentalControllers.postRental
 );
 
-// Get all houses
-router.get('/', houseControllers.getAllHouses);
+// Get all rentals
+router.get('/', rentalControllers.getAllRentals);
 
-// Get house by Id
-router.get('/:id', houseControllers.getHouseById);
+// Get rental by Id
+router.get('/:id', rentalControllers.getRentalById);
 
-// Get top-rated houses
-router.get('/top-rated', houseControllers.getTopRatedHouses);
+// Get top-rated rentals
+router.get('/top-rated', rentalControllers.getTopRatedRentals);
 
-// Search houses by location
-router.get('/search/:location', houseControllers.searchHousesByLocation);
+// Search rentals by location
+router.get('/search/:location', rentalControllers.searchRentalsByLocation);
 
 module.exports = router;

@@ -2,7 +2,7 @@ const AdminUser = require("../models/admins");
 const jwt = require("jsonwebtoken");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
-const Car = require("../models/car");
+const Rental = require("../models/rental");
 const User = require("../models/user");
 
 require("dotenv").config();

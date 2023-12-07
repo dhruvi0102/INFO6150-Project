@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
-import img1 from '../../assets/randiimg.webp'
-import img2 from '../../assets/randiimg.jpeg'
+//import img1 from '../../assets/randiimg.webp'
+//import img2 from '../../assets/randiimg.jpeg'
 const color = '#1B263B';
 
 export const themes = { 

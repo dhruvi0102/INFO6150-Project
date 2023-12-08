@@ -1,0 +1,88 @@
+.AboutPage {
+  background-image: url('../assets/cabin.jpeg');
+}
+.jumbotron {
+  background-color: red;
+  color: #fff;
+  padding: 100px 25px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.jumbotron h1 {
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  font-size: xx-large;
+}
+.container-fluid p {
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  font-size: larger;
+}
+.container-fluid h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  font-size: larger;
+}
+.container-fluid h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 1px;
+  color: white;
+  font-size: larger;
+}
+.container-fluid {
+  padding: 60px 50px;
+}
+
+.bg-grey {
+  background-color: #f6f6f6;
+}
+
+.logo {
+  font-size: 200px;
+}
+.col-md-2 {
+  margin-left: 2%;
+}
+
+.Team_Container {
+  position: absolute;
+  left: 3%;
+}
+.Team {
+  position: relative;
+}
+
+.Team h1 {
+  margin-bottom: 5%;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+@media screen and (max-width: 1000px) {
+  .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+  }
+  .col-md-2 img {
+    height: 500px;
+    left: 0%;
+    position: relative;
+  }
+}
+
+.values h2 {
+  color: black;
+  font-size: larger;
+}
+.values h4 {
+  color: black;
+  font-size: larger;
+}
+
+.values p {
+  color: black;
+  font-size: larger;
+}

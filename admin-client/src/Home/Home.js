@@ -28,10 +28,10 @@ const Home = () => {
       <div className="font-semibold">Welcome {user.name}</div>
       <div className="mt-5">
         <button
-          onClick={() => shift("/add-a-car")}
+          onClick={() => shift("/add-a-rental")}
           className="bg-[#30336b] w-64 px-10 py-3 text-white"
         >
-          Add A Car
+          Add A Rental
         </button>
         <br />
         <button

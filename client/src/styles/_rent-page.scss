@@ -1,0 +1,162 @@
+.rent-page-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-self: center;
+  width: 80%;
+  margin: 0% auto 0 auto;
+}
+
+.rent-wrapper {
+  margin: 25px auto;
+  background-color: white;
+  width: 40%;
+  padding: 2%;
+  border-radius: 10%;
+  h3 {
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  p {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: lowercase;
+    margin: 5px 0 35px 0;
+  }
+  .rent-form {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    ::placeholder {
+      color: inherit !important;
+      opacity: 1; /* Firefox */
+    }
+    input[type='text'] {
+      background-color: transparent;
+      padding: 15px 10px 3px 25px;
+      border: none;
+      outline: none;
+      border-bottom: 2px solid black;
+      background-color: transparent;
+      margin-bottom: 10px;
+    }
+    input[type='submit'] {
+      font-size: 16px;
+      width: 100%;
+      margin-top: 30px;
+      padding: 10px;
+      margin-bottom: 5px;
+      background-color: transparent;
+      outline: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      border: 2px solid black;
+      box-shadow: 3px 2px 5px 0px #002141;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+    .back-login {
+      font-size: 16px;
+      width: 100%;
+      margin-top: 30px;
+      padding: 10px;
+      margin-bottom: 5px;
+      background-color: rgba(255, 255, 255, 0.819);
+      outline: none;
+      border: 2px solid black;
+      box-shadow: 3px 2px 5px 0px #002141;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .rent-wrapper {
+    margin: 0px auto;
+    background-color: white;
+    width: 80%;
+    padding: 2%;
+    border-radius: 10%;
+    h3 {
+      text-align: center;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    p {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: lowercase;
+      margin: 5px 0 35px 0;
+    }
+    .rent-form {
+      margin: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      ::placeholder {
+        color: inherit !important;
+        opacity: 1; /* Firefox */
+      }
+      input[type='text'] {
+        background-color: transparent;
+        padding: 15px 10px 3px 25px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+        background-color: transparent;
+        margin-bottom: 10px;
+      }
+      input[type='submit'] {
+        font-size: 16px;
+        width: 100%;
+        margin-top: 30px;
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: transparent;
+        outline: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        border: 2px solid black;
+        box-shadow: 3px 2px 5px 0px #002141;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+      .back-login {
+        font-size: 16px;
+        width: 100%;
+        margin-top: 30px;
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: rgba(255, 255, 255, 0.819);
+        outline: none;
+        border: 2px solid black;
+        box-shadow: 3px 2px 5px 0px #002141;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        a {
+          color: rgb(0, 0, 0);
+          text-decoration: none;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

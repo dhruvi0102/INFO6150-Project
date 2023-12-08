@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+.home-title {
+  text-align: center;
+  padding-top: 30px;
+  // padding-left: 30px;
+  text-transform: uppercase;
+  font-size: 4vw;
+  letter-spacing: 1.5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  //  background-color: white;
+  margin: 0%;
+}
+.offer-counter {
+  text-align: center;
+  padding: 25px 0 20px 0;
+  font-size: 20px;
+}
+.title-search {
+  text-align: center;
+  // margin-bottom: 20px;
+  height: 40px;
+  h1 {
+    text-transform: uppercase;
+  }
+}
+.line {
+  background-color: black;
+  margin: 0 auto 25px auto;
+  width: 70%;
+  height: 2px;
+}
+.subtitle {
+  text-align: center;
+  font-family: 'Kalam', cursive;
+  padding: 10px 30px;
+  font-size: 28px;
+  text-transform: lowercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.offers-list {
+  display: flex;
+}
+.offers-btn {
+  text-align: center;
+  margin: auto;
+  border-bottom: 4px solid black;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  width: 220px;
+  padding: 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  a {
+    text-decoration: none;
+    // color: black;
+    color: inherit !important ;
+  }
+}
+.slogan {
+  text-align: center;
+  margin: 80px auto 15px auto;
+  // text-transform: uppercase;
+  font-size: 4vw;
+  letter-spacing: 1.5px;
+  font-family: 'Patrick Hand', cursive;
+}
+.sorting-section {
+  display: flex;
+  width: 100%;
+  margin: 25px auto 0 auto;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  // background-color: bisque;
+}
+
+.space {
+  height: 80px;
+}
+
+.headingtop {
+  //   background-image: url('../../src/assets/randiimg.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-self: center;
+  // color: #2f3c7e;
+  //   color: aliceblue;
+}
+
+@media (max-width: 420px) {
+  .sorting-section {
+    width: 90%;
+  }
+  .line {
+    width: 70%;
+  }
+}

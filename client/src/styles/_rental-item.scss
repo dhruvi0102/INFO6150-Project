@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+
+
+.item-rental {
+  margin: 25px;
+  // padding: 10px 0;
+  width: 25%;
+  
+  border-bottom: 5px solid #000000;
+  border-radius: 20px;
+  background-color: rgba(215, 215, 215, 0.318);
+  .name {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2vw;
+    font-weight: 700;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+    span {
+      margin-left: 5px;
+      font-size: 1vw;
+      color: rgb(14, 1, 1);
+      text-transform: lowercase;
+    }
+  }
+  .options {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    color: #000000;
+    .rental-type {
+      text-align: center;
+      font-size: 1vw;
+      font-weight: 700;
+      letter-spacing: 1px;
+      span {
+        display: block;
+        font-size: 20px;
+      }
+    }
+  }
+  img {
+    cursor: pointer;
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    margin: 0%;
+    transition: transform .2s;
+  }
+ 
+  .price {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1vw;
+    font-weight: 600;
+    span {
+      font-size: 1.5vw;
+      color: #000000;
+    }
+  }
+  .info-btn {
+    display: flex;
+    margin: 30px 0;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    p {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid black;
+      padding: 5px 20px;
+      cursor: pointer;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .item-rental {
+    margin: 25px;
+    // padding: 10px 0;
+    width: 65%;
+    
+    border-bottom: 5px solid #000000;
+    border-radius: 20px;
+    background-color: rgba(215, 215, 215, 0.318);
+    .name {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 5vw;
+      font-weight: 700;
+      font-family: 'Source Sans Pro', sans-serif;
+      
+      span {
+        margin-left: 5px;
+        font-size: 3.5vw;
+        color: rgb(14, 1, 1);
+        text-transform: lowercase;
+      }
+    }
+    .options {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-evenly;
+      color: #000000;
+      .rental-type {
+        text-align: center;
+        font-size: 2.5vw;
+        font-weight: 700;
+        letter-spacing: 1px;
+        span {
+          display: block;
+          font-size: 20px;
+        }
+      }
+    }
+    img {
+      cursor: pointer;
+      width: 100%;
+      height: 200px;
+      border-top-left-radius: 0%;
+      border-top-right-radius: 0%;
+      margin: 0%;
+      transition: transform .2s;
+    }
+   
+    .price {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 3vw;
+      font-weight: 600;
+      span {
+        font-size: 3.5vw;
+        color: #000000;
+      }
+    }
+    .info-btn {
+      display: flex;
+      margin: 30px 0;
+      justify-content: space-around;
+      margin-bottom: 30px;
+      p {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 700;
+        border: 1px solid black;
+        padding: 5px 20px;
+        cursor: pointer;
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+  
+}

@@ -12,7 +12,7 @@ const AddCar = () => {
     rooms: "4",
     bathrooms: "2",
     price: "499.99",
-    qt: "5",
+    qt: "3",
     image:
       "https://www.pexels.com/photo/beige-bungalow-house-259588/",
   });
@@ -26,7 +26,7 @@ const AddCar = () => {
   const submit = async () => {
     try {
       const cookie = getCookie("token");
-      const data = await axios.post("/add-car", creds, {
+      const data = await axios.post("/add-rental", creds, {
         headers: {
           Authorization: cookie,
         },

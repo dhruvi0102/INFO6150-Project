@@ -13,9 +13,9 @@ import FleetList from '../Fleet/components/FleetList';
 import PreLoader from '../shared/components/PreLoader/PreLoader';
 import RentalInfoCard from '../shared/components/RentalInfoCard/RentalInfoCard';
 import Layout from '../shared/components/Layout/Layout';
-import Cabin from '../assets/cabin.jpeg';
-import MansionRental from '../assets/mansionhouse.jpeg';
-import BeachFront from '../assets/beachfronthouse.jpeg';
+import Cabin from '../assets/cabin1.jpeg';
+import MansionRental from '../assets/Mansion1.jpeg';
+import BeachFront from '../assets/beachfronthouse2.jpeg';
 import myVideo from '../assets/TravelVideo.mp4';
 import { ThemeContext, themes } from '../shared/contexts/ThemeContext';
 

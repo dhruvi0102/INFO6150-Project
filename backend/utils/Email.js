@@ -30,7 +30,7 @@ const sendEmail = ({
         html: `<h3>This is your Rent Invoice</h3>
         </br>
         <h4> Dear ${firstName} ${lastName}</h4>
-        <p>You have rented ${RentalName} ${RentalModel}</p>
+        <p>You have rented ${carName} ${carModel}</p>
         <p>for total ${totalDays} days - starting from ${startDate} to ${endDate}</p>
         <h3>Your total rent price is ${totalPrice} Dollars</h3>
         </br>
@@ -55,13 +55,13 @@ const sendPasswordResetEmail = ({ to, token }) => {
       port: 465,
       secure: true,
       auth: {
-        user: "heenashah1109@gmail.com",
-        pass: "Heena303$",
+        user: "jm@wcgcap.io",
+        pass: "dlznsazmhpvraecw",
       },
     });
 
     const mailOptions = {
-      from: "heenashah1109@gmail.com",
+      from: "jm@wcgcap.io",
       to,
       subject: "Password reset",
       html: `<h3>This is your Password reset link</h3>

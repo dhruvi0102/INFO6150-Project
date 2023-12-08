@@ -1,7 +1,7 @@
 const express = require('express');
 const { check } = require('express-validator');
 
-const rentalControllers = require('../controllers/rentals-controllers');
+const rentalsControllers = require('../controllers/rentals-controllers');
 const fileUpload = require('../middleware/file-upload');
 const router = express.Router();
 
@@ -16,19 +16,16 @@ router.post('/',
         check('capacity', 'Please enter a valid capacity').not().isEmpty().isNumeric().trim().isInt({ gt: 0 }),
         check('image', 'Please upload an image').not().isEmpty().trim(),
     ],
-    rentalControllers.postRental
+    rentalsControllers.postRental
 );
 
-// Get all rentals
-router.get('/', rentalControllers.getAllRentals);
-
-// Get rental by Id
-router.get('/:id', rentalControllers.getRentalById);
-
-// Get top-rated rentals
-router.get('/top-rated', rentalControllers.getTopRatedRentals);
-
-// Search rentals by location
-router.get('/search/:location', rentalControllers.searchRentalsByLocation);
+//Get all rental
+router.get('/', rentalsControllers.getAllRentals);
+//Get by Id
+router.get('/:id', rentalsControllers.getRentalById);
+//Offers Cars - landing page top cars
+router.get('/offers/rentals', rentalsControllers.getOfferRentals);
+//Sort by Name/Model
+router.get('/sort/:name', rentalsControllers.getRentalByName);
 
 module.exports = router;

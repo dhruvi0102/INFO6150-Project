@@ -67,6 +67,7 @@ const DetailRentPage = (props) => {
     },
     [history, userId]
   );
+  
 
   let fixedPrice;
   if (selected.price) {

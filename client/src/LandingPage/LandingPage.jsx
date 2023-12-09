@@ -41,10 +41,10 @@ const LandingPage = () => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get('/fleet/offers/Rental')
+      .get('/fleet/offers/Rentals')
       .then((res) => {
         setIsLoading(false);
-        setOffers(res.data.rental);
+        setOffers(res.data.rentals);
       })
       .catch((err) => {
         setIsLoading(false);

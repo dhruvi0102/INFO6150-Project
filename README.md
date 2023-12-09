@@ -7,8 +7,6 @@ React, Node, MongoDB, Express - MERN Stack - "Rant-a-car Single Page App"
 * 3 main types subcategory (landing page)
 * log-in
 * register
-* reset password
-* reset e-mail with generated token valid 1h
 * client side validation
 * backend side validation (Express - validator)
 * rent a car 
@@ -16,10 +14,6 @@ React, Node, MongoDB, Express - MERN Stack - "Rant-a-car Single Page App"
 * sort by price
 * place an order
 * pay now (reduce price with 10%)
-* pay later
-* PDF invoice
-* confirmation e-mail (invoice e-mail)
-* simple gsap - "GreenSock" - animation
 
 
 # Admin panel
@@ -45,9 +39,7 @@ React, Node, MongoDB, Express - MERN Stack - "Rant-a-car Single Page App"
 
 # Orders page
 * Delete Order
-* pay now, pay later - changing the price if pay now (backend)
-* Invoice Email on Checkout
-* PDF Invoice
+* pay now or elete order
 
 # About page
 * Contains overview of the project

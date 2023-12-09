@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getCookie } from "../utils/cookie-helper";
 
-const AddCar = () => {
+const AddRental = () => {
   const [creds, setcreds] = useState({
     name: "The One",
     rentalModel: "book@one.com",
@@ -120,4 +120,4 @@ const AddCar = () => {
   );
 };
 
-export default AddCar;
+export default AddRental;

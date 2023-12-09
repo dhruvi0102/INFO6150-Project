@@ -58,7 +58,7 @@ const ResetPage = (props) => {
                 <FaRegArrowAltCircleLeft /><span>Move Back</span></div>
             <div className='auth-container' ref={el => ( authForm = el)}>
                 <h3>Reset password</h3>
-                <p>Reset link is sent to your Email</p>
+                <p>We will send you reset link per E-mail</p>
                 <form className='auth-form' onSubmit={onSubmitHandler}>
                     <div className='input-fied'>
                         <input type="email" name='email' placeholder='E-mail...'

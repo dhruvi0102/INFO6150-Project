@@ -55,7 +55,7 @@ const AddRental = () => {
           onChange={onChange}
           className="mt-2 p-3 w-96 bg-transparent border border-black"
           name="rentalModel"
-          value={creds.model}
+          value={creds.rentalmodel}
           required={true}
         />
         <div>Rental Type</div>
@@ -71,7 +71,7 @@ const AddRental = () => {
           onChange={onChange}
           className="mt-2 p-3 w-96 bg-transparent border border-black"
           name="rooms"
-          value={creds.seats}
+          value={creds.rooms}
           required={true}
         />
         <div>Bathrooms</div>
@@ -79,7 +79,7 @@ const AddRental = () => {
           onChange={onChange}
           className="mt-2 p-3 w-96 bg-transparent border border-black"
           name="bathrooms"
-          value={creds.gears}
+          value={creds.bathrooms}
           required={true}
         />
         <div>Price</div>

@@ -14,8 +14,9 @@ import PreLoader from "../../shared/components/PreLoader/PreLoader";
 import RentForm from "../components/RentForm";
 import Layout from "../../shared/components/Layout/Layout";
 import { AuthContext } from "../../shared/contexts/AuthContext";
-import { MdCastle, MdBeachAccess,MdCabin } from "react-icons/md";
-import { GiTreehouse } from "react-icons/gi";
+import { MdDirectionsCar, MdAirlineSeatReclineNormal } from "react-icons/md";
+import { GoGear } from "react-icons/go";
+import { IoMdSnow } from "react-icons/io";
 
 const DetailRentPage = (props) => {
   const { userId } = useContext(AuthContext);
@@ -25,7 +26,7 @@ const DetailRentPage = (props) => {
   let title = useRef(null);
   let line = useRef(null);
   const history = useHistory();
-  const RentalId = useParams().id;
+  const carId = useParams().id;
 
   useEffect(() => {
     tl.current = gsap.timeline();
@@ -34,20 +35,20 @@ const DetailRentPage = (props) => {
       .from(line, 2, { width: 0 }, 0.5);
   }, []);
 
-  //Fetch single Rental element
+  //Fetch single car element
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get(`/fleet/${RentalId}`)
+      .get(`/fleet/${carId}`)
       .then((res) => {
         setIsLoading(false);
-        setSelected(res.data.Rental);
+        setSelected(res.data.car);
       })
       .catch((err) => {
         setIsLoading(false);
         console.log(err);
       });
-  }, [RentalId]);
+  }, [carId]);
 
   //Make an order
   const onOrderHandler = useCallback(
@@ -67,7 +68,6 @@ const DetailRentPage = (props) => {
     },
     [history, userId]
   );
-  
 
   let fixedPrice;
   if (selected.price) {
@@ -86,51 +86,51 @@ const DetailRentPage = (props) => {
   return (
     <Layout>
       <h1 ref={(el) => (title = el)} className="home-title">
-        Rent a place, it has never been easier{" "}
+        Rent a car, it has never been easier{" "}
       </h1>
       <p ref={(el) => (line = el)} className="line" />
       <div className="rent-page-wrapper">
         {isLoading ? (
           <PreLoader />
         ) : (
-          <div className="item-rental" style={styleme}>
-            <p className="name">
+          <div className="item-cars" style={styleme}>
+            <p className="name2">
               {selected.name}
               <span> {selected.model}</span>
             </p>
             <div className="options">
-              <p style={{ textTransform: "capitalize" }} className="rental">
+              <p style={{ textTransform: "capitalize" }} className="car-type">
                 <span>
-                  <MdCabin />
+                  <MdDirectionsCar />
                 </span>{" "}
-                {selected.RentalType}
+                {selected.carType}
               </p>
-              <p className="rental-type">
+              <p className="car-type">
                 <span>
-                  <MdBeachAccess />
+                  <MdAirlineSeatReclineNormal />
                 </span>{" "}
                 {selected.seats}
               </p>
-              <p className="rental-type">
+              <p className="car-type">
                 <span>
-                  <MdCastle />
+                  <GoGear />
                 </span>{" "}
                 {selected.gears}
               </p>
-              <p className="rental-type">
+              <p className="car-type">
                 <span>
-                  <GiTreehouse />
+                  <IoMdSnow />
                 </span>{" "}
                 {selected.clima ? "yes" : "no"}
               </p>
             </div>
-            <img src={image} alt="Rental" />
+            <img src={image} alt="car" />
             <p className="price">
               Price - € <span>{fixedPrice}</span> /For a Day{" "}
             </p>
           </div>
         )}
-        <RentForm RentalId={RentalId} onOrderHandler={onOrderHandler} />
+        <RentForm carId={carId} onOrderHandler={onOrderHandler} />
       </div>
       <ToastContainer />
     </Layout>

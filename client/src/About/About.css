@@ -1,11 +1,8 @@
 .AboutPage {
-  background-image: url('../assets/cabin.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url('../assets/black_bg.jpeg');
 }
 .jumbotron {
-  background-color: rgb(193, 157, 157);
+  background-color: red;
   color: #fff;
   padding: 100px 25px;
   font-family: 'Source Sans Pro', sans-serif;

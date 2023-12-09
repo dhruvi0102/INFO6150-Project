@@ -57,12 +57,12 @@ const OrderSingleItem = (props) => {
         </Modal>
       )}
       <div className='order-card'>
-        <div className='item-rental'>
+        <div className='item-cars'>
           <p className='name'>
             {props.name}
             <span> {props.model}</span>
           </p>
-          <img src={props.image} alt='rental' />
+          <img src={props.image} alt='car' />
         </div>
         <div className='main-order-wrapper'>
           <p className='total-price'>

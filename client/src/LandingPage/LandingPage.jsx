@@ -11,12 +11,12 @@ import axios from '../axios';
 import './landing.css';
 import FleetList from '../Fleet/components/FleetList';
 import PreLoader from '../shared/components/PreLoader/PreLoader';
-import RentalInfoCard from '../shared/components/RentalInfoCard/RentalInfoCard';
+import CarInforCard from '../shared/components/CarInfoCard/CarInfoCard';
 import Layout from '../shared/components/Layout/Layout';
-import Cabin from '../assets/cabin1.jpeg';
-import MansionRental from '../assets/Mansion1.jpeg';
-import BeachFront from '../assets/beachfronthouse2.jpeg';
-import myVideo from '../assets/TravelVideo.mp4';
+import suv from '../assets/vw-touran.png';
+import sedan from '../assets/bmw-1er.png';
+import coupe from '../assets/mb-e53.png';
+import myVideo from '../assets/backvideo.mp4';
 import { ThemeContext, themes } from '../shared/contexts/ThemeContext';
 
 const LandingPage = () => {
@@ -41,10 +41,10 @@ const LandingPage = () => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get('/fleet/offers/Rentals')
+      .get('/fleet/offers/cars')
       .then((res) => {
         setIsLoading(false);
-        setOffers(res.data.rentals);
+        setOffers(res.data.cars);
       })
       .catch((err) => {
         setIsLoading(false);
@@ -67,23 +67,23 @@ const LandingPage = () => {
           <video className='video-container' autoPlay muted loop id='video'>
             <source src={myVideo} type='video/mp4' />
           </video>
-          {/*<div className='content'>
-            <h1 ref={(el) => (title = el)} className='Rental-title'>
-              Welcome to HouseHop
+          <div className='content'>
+            <h1 ref={(el) => (title = el)} className='home-title'>
+              Welcome to Car-0-Pedia
             </h1>
             <p ref={(el) => (subtitle = el)} className='sub-title'>
-              Stay and enjoy vacation Carefree
+              Rent, Drive Carefree
             </p>
-  </div>*/}
+          </div>
         </div>
 
         <div
           className='headingtop'
-          style={{ backgroundColor: 'white' }}
+          style={{ backgroundImage: `url(${currentTheme.imagePeecheki})` }}
         >
           <div className='space'></div>
-          <h1 ref={(el) => (title = el)} className='rental-title'>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Low weekly rates. Avaliable right now.
+          <h1 ref={(el) => (title = el)} className='home-title'>
+            Low weekly rates. Avaliable right now.
           </h1>
           <p ref={(el) => (subtitle = el)} className='subtitle'>
             Cancel at any time
@@ -103,33 +103,33 @@ const LandingPage = () => {
         >
           <NavLink to='/fleet'>Check our other offers</NavLink>
         </p>
-        <p className='slogan'>Don't dream it, rent it </p>
+        <p className='slogan'>Don't dream it, drive it </p>
         <p
           ref={(el) => (line = el)}
           className='line'
           style={{ backgroundColor: currentTheme.cardBorderBottomColor }}
         />
         <section className='sorting-section'>
-          <RentalInfoCard
-            src={Cabin}
-            alt={'Cabin'}
+          <CarInforCard
+            src={coupe}
+            alt={'coupe'}
             clicked={onSearchtHandler}
-            name={'Cabin'}
-            text={'Check our Cabins'}
+            name={'coupe'}
+            text={'Check our coupes'}
           />
-          <RentalInfoCard
-            src={MansionRental}
-            alt={'Mansion'}
+          <CarInforCard
+            src={sedan}
+            alt={'sedan'}
             clicked={onSearchtHandler}
-            name={'mension'}
-            text={'Check our Mansions'}
+            name={'sedan'}
+            text={'Check our sedans'}
           />
-          <RentalInfoCard
-            src={BeachFront}
-            alt={'beachfront'}
+          <CarInforCard
+            src={suv}
+            alt={'suv'}
             clicked={onSearchtHandler}
-            name={'beachfront'}
-            text={'Check our BeachFront Rentals'}
+            name={'suv'}
+            text={'Check our suvs'}
           />
         </section>
       </div>

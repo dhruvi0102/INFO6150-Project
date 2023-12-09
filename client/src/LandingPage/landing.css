@@ -9,10 +9,10 @@ video {
   /* max-height: 828px; */
 }
 
-/*.content {
-  background-color: black;
+.content {
+  /* background-color: black; */
   position: relative;
-  color: black;
+  color: white;
   overflow: hidden;
 }
 
@@ -24,13 +24,12 @@ video {
 .content p {
   font-size: 300%;
   text-align: center;
-}*/
+}
 
 .topContainer {
-  background-color: white;
+  background-color: black;
   overflow: hidden;
   height: 100vh;
-  margin: 0 ;
 }
 
 @media screen and (max-width: 501px) {

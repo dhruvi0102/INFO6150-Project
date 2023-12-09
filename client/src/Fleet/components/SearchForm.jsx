@@ -23,7 +23,7 @@ const SearchForm = (props) => {
     return(
         <div className='search-form'>
             <form onSubmit={onSubmitNameHandler}>
-                    <input type='text' name='name' value={name} placeholder='Enter type or name of rental you are looking for'
+                    <input type='text' name='name' value={name} placeholder='Enter name.. model.. or type..'
                     required onChange={(e) => setName(e.target.value)} />
                     {
                         props.onSearch 

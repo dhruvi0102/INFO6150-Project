@@ -277,22 +277,37 @@ html {
   left: 8px;
   width: 16px;
   background: black;
-  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  -webkit-animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+          animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
 
 .lds-facebook div:nth-child(1) {
   left: 8px;
-  animation-delay: -0.24s;
+  -webkit-animation-delay: -0.24s;
+          animation-delay: -0.24s;
 }
 
 .lds-facebook div:nth-child(2) {
   left: 32px;
-  animation-delay: -0.12s;
+  -webkit-animation-delay: -0.12s;
+          animation-delay: -0.12s;
 }
 
 .lds-facebook div:nth-child(3) {
   left: 56px;
-  animation-delay: 0;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+
+@-webkit-keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
 }
 
 @keyframes lds-facebook {
@@ -324,7 +339,7 @@ html {
     justify-content: center;
   }
 }
-.list-rental {
+.list-autos {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -334,7 +349,7 @@ html {
 }
 
 @media (max-width: 600px) {
-  .list-rental {
+  .list-autos {
     width: 100%;
     display: flex;
     flex-flow: column;
@@ -342,43 +357,43 @@ html {
     align-items: center;
   }
 }
-.item-rental {
+.item-cars {
   margin: 25px;
   width: 25%;
   border-bottom: 5px solid #000000;
   border-radius: 20px;
   background-color: rgba(215, 215, 215, 0.318);
 }
-.item-rental .name {
+.item-cars .name {
   text-align: center;
   text-transform: uppercase;
   font-size: 2vw;
   font-weight: 700;
   font-family: "Source Sans Pro", sans-serif;
 }
-.item-rental .name span {
+.item-cars .name span {
   margin-left: 5px;
   font-size: 1vw;
   color: rgb(14, 1, 1);
   text-transform: lowercase;
 }
-.item-rental .options {
+.item-cars .options {
   margin-top: 15px;
   display: flex;
   justify-content: space-evenly;
   color: #000000;
 }
-.item-rental .options .rental-type {
+.item-cars .options .car-type {
   text-align: center;
   font-size: 1vw;
   font-weight: 700;
   letter-spacing: 1px;
 }
-.item-rental .options .rental-type span {
+.item-cars .options .car-type span {
   display: block;
   font-size: 20px;
 }
-.item-rental img {
+.item-cars img {
   cursor: pointer;
   width: 100%;
   height: 200px;
@@ -387,23 +402,23 @@ html {
   margin: 0%;
   transition: transform 0.2s;
 }
-.item-rental .price {
+.item-cars .price {
   text-align: center;
   text-transform: uppercase;
   font-size: 1vw;
   font-weight: 600;
 }
-.item-rental .price span {
+.item-cars .price span {
   font-size: 1.5vw;
   color: #000000;
 }
-.item-rental .info-btn {
+.item-cars .info-btn {
   display: flex;
   margin: 30px 0;
   justify-content: space-around;
   margin-bottom: 30px;
 }
-.item-rental .info-btn p {
+.item-cars .info-btn p {
   text-align: center;
   text-transform: uppercase;
   font-size: 14px;
@@ -412,49 +427,49 @@ html {
   padding: 5px 20px;
   cursor: pointer;
 }
-.item-rental .info-btn p a {
+.item-cars .info-btn p a {
   text-decoration: none;
   color: black;
 }
 
 @media (max-width: 800px) {
-  .item-rental {
+  .item-cars {
     margin: 25px;
     width: 65%;
     border-bottom: 5px solid #000000;
     border-radius: 20px;
     background-color: rgba(215, 215, 215, 0.318);
   }
-  .item-rental .name {
+  .item-cars .name {
     text-align: center;
     text-transform: uppercase;
     font-size: 5vw;
     font-weight: 700;
     font-family: "Source Sans Pro", sans-serif;
   }
-  .item-rental .name span {
+  .item-cars .name span {
     margin-left: 5px;
     font-size: 3.5vw;
     color: rgb(14, 1, 1);
     text-transform: lowercase;
   }
-  .item-rental .options {
+  .item-cars .options {
     margin-top: 15px;
     display: flex;
     justify-content: space-evenly;
     color: #000000;
   }
-  .item-rental .options .rental-type {
+  .item-cars .options .car-type {
     text-align: center;
     font-size: 2.5vw;
     font-weight: 700;
     letter-spacing: 1px;
   }
-  .item-rental .options .rental-type span {
+  .item-cars .options .car-type span {
     display: block;
     font-size: 20px;
   }
-  .item-rental img {
+  .item-cars img {
     cursor: pointer;
     width: 100%;
     height: 200px;
@@ -463,23 +478,23 @@ html {
     margin: 0%;
     transition: transform 0.2s;
   }
-  .item-rental .price {
+  .item-cars .price {
     text-align: center;
     text-transform: uppercase;
     font-size: 3vw;
     font-weight: 600;
   }
-  .item-rental .price span {
+  .item-cars .price span {
     font-size: 3.5vw;
     color: #000000;
   }
-  .item-rental .info-btn {
+  .item-cars .info-btn {
     display: flex;
     margin: 30px 0;
     justify-content: space-around;
     margin-bottom: 30px;
   }
-  .item-rental .info-btn p {
+  .item-cars .info-btn p {
     text-align: center;
     text-transform: uppercase;
     font-size: 14px;
@@ -488,7 +503,7 @@ html {
     padding: 5px 20px;
     cursor: pointer;
   }
-  .item-rental .info-btn p a {
+  .item-cars .info-btn p a {
     text-decoration: none;
     color: black;
   }
@@ -738,6 +753,14 @@ html {
   display: flex;
   flex-direction: column;
 }
+.rent-wrapper .rent-form ::-moz-placeholder {
+  color: inherit !important;
+  opacity: 1; /* Firefox */
+}
+.rent-wrapper .rent-form :-ms-input-placeholder {
+  color: inherit !important;
+  opacity: 1; /* Firefox */
+}
 .rent-wrapper .rent-form ::placeholder {
   color: inherit !important;
   opacity: 1; /* Firefox */
@@ -814,6 +837,14 @@ html {
     width: 100%;
     display: flex;
     flex-direction: column;
+  }
+  .rent-wrapper .rent-form ::-moz-placeholder {
+    color: inherit !important;
+    opacity: 1; /* Firefox */
+  }
+  .rent-wrapper .rent-form :-ms-input-placeholder {
+    color: inherit !important;
+    opacity: 1; /* Firefox */
   }
   .rent-wrapper .rent-form ::placeholder {
     color: inherit !important;
@@ -1036,6 +1067,4 @@ html {
 .sort-arrow button span {
   font-size: 15px;
   margin-right: 10px;
-}
-
-/*# sourceMappingURL=App.css.map */
+}/*# sourceMappingURL=App.css.map */

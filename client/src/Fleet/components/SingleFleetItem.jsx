@@ -2,8 +2,9 @@ import React, {   useContext  } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import { ThemeContext, themes} from '../../shared/contexts/ThemeContext';
 
-import { MdCastle, MdBeachAccess,MdCabin } from "react-icons/md";
-import { GiTreehouse } from "react-icons/gi";
+import { MdDirectionsCar, MdAirlineSeatReclineNormal } from "react-icons/md";
+import { GoGear } from "react-icons/go";
+import { IoMdSnow } from "react-icons/io";
 
 const SingleFleetItem = (props) => {
   const history = useHistory();
@@ -15,34 +16,34 @@ const SingleFleetItem = (props) => {
   console.log(props.image);
 
   return (
-    <div className="item-rental" style={{backgroundColor:currentTheme.cardColor, color:currentTheme.cardFontColor, borderBottomColor:currentTheme.cardBorderBottomColor}}>
-      <img onClick={onToRentMove} src={props.image} alt="rental"  />
+    <div className="item-cars" style={{backgroundColor:currentTheme.cardColor, color:currentTheme.cardFontColor, borderBottomColor:currentTheme.cardBorderBottomColor}}>
+      <img onClick={onToRentMove} src={props.image} alt="car"  />
       <p className="name">
         {props.name}<br></br>
-        <span> {props.rentalmodel}</span>
+        <span> {props.model}</span>
       </p>
       <div className="options">
-        <p style={{ textTransform: "capitalize" }} className="rental-type">
+        <p style={{ textTransform: "capitalize" }} className="car-type">
           <span>
-            <MdCabin />
+            <MdDirectionsCar />
           </span>{" "}
-          {props.rentalType}
+          {props.carType}
         </p>
-        <p className="rental-type">
+        <p className="car-type">
           <span>
-            <MdBeachAccess />
+            <MdAirlineSeatReclineNormal />
           </span>{" "}
-          {props.rooms}
+          {props.seats}
         </p>
-        <p className="rental-type">
+        <p className="car-type">
           <span>
-            <MdCastle />
+            <GoGear />
           </span>{" "}
-          {props.bathroom}
+          {props.gears}
         </p>
-        <p className="rental-type">
+        <p className="car-type">
           <span>
-            <GiTreehouse />
+            <IoMdSnow />
           </span>{" "}
           {props.clima ? "yes" : "no"}
         </p>

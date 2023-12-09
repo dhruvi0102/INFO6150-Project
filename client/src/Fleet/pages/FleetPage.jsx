@@ -47,13 +47,13 @@ const FleetPage = () => {
                   .from(line, 2, { width: 0 }, 0.5)
     }, []);
 
-    //Fetch all rentals from db
+    //Fetch all cars from db
     useEffect(() => {
         setIsLoading(true)
         axios.get('/fleet')
              .then(res => {
                 setIsLoading(false);
-                dispatch({type: 'GET', fleet: res.data.rentals})
+                dispatch({type: 'GET', fleet: res.data.cars})
              }).catch(err => {
                 setIsLoading(false);
                 console.log(err);
@@ -68,7 +68,7 @@ const FleetPage = () => {
              .then(res => {
                
                 setIsLoading(false);
-                setSearch(res.data.rentals);
+                setSearch(res.data.cars);
                 setOnSearch(true);
              }).catch(err => {
                 setIsLoading(false);
@@ -118,9 +118,9 @@ const FleetPage = () => {
                     }    
                     </Fragment> 
 
-    let mainRentalList;
+    let mainCarList;
     if(fleet.length){
-        mainRentalList = <p className='offer-counter'>we have {fleet.length} total
+        mainCarList = <p className='offer-counter'>we have {fleet.length} total
         <span> {fleet.length ===  1 ? 'offer' : 'offers'} </span>for you</p>
     }
 
@@ -140,10 +140,10 @@ console.log(currentTheme);
             <SearchForm onSubmitNameHandler={onSubmitNameHandler}
             onSearch={onSearch}
             onSearchClear={onSearchClear}/>
-            <h1 ref={ el => ( title = el )} className='home-title'>Premium rentals</h1>
+            <h1 ref={ el => ( title = el )} className='home-title'>premium car rental</h1>
             <p ref={ el => ( subtitle = el )} className='subtitle'>check our fleet</p>
             <p ref={ el => ( line = el )} className='line'  style={{backgroundColor:currentTheme.cardBorderBottomColor}}/>
-            { onSearch ? searched : mainRentalList }       
+            { onSearch ? searched : mainCarList }       
             { onSearch ? searchList : mainList }      
         </Layout>
     )

@@ -35,7 +35,7 @@ const MainNav = () => {
                         <p style={{backgroundColor: currentTheme.color}}/>
                         <p style={{backgroundColor: currentTheme.color}}/>
                     </div>                           
-                    <h1 className='logo'>HouseHop</h1>
+                    <h1 className='logo'>Car-O-pedia</h1>
                 </div>
                 <div className='company-ident'>
                     {

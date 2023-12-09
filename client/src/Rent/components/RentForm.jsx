@@ -18,7 +18,7 @@ const RentForm = (props) => {
         lastName: lastName,
         startDate: startDate,
         endDate: endDate,
-        Rental: props.RentalId,
+        car: props.carId,
         customer: userId
     };
 
@@ -31,8 +31,8 @@ const RentForm = (props) => {
 
     return(
         <div className='rent-wrapper' style={{backgroundColor : currentTheme.formColor}} >
-            <h3>HouseHop Rental Form</h3>
-            <p>please fill the names of the guests</p>
+            <h3>Motor Vehicle Rental Form</h3>
+            <p>please fill the names of the driver</p>
             <form className='rent-form' onSubmit={onHandleSubmit}>
                 <input type='text' style={{color: currentTheme.formContentColor}} name='firstName' value={firstName} placeholder='First Name' 
                 required onChange={(e) => setFirstName(e.target.value)}/>

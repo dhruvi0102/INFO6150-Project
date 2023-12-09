@@ -5,12 +5,12 @@ import OrderSingleItem from './OrderSingleItem';
 const OrdersList = (props) => {
   if (!props.orders.length) {
     return (
-      <p style={{ textAlign: 'center' }}>We can't find any rental requests right now</p>
+      <p style={{ textAlign: 'center' }}>We can't find any orders right now</p>
     );
   }
 
   return (
-    <ul className='list-rental'>
+    <ul className='list-autos'>
       {props.orders.map((order) => {
         return (
           <OrderSingleItem
@@ -22,7 +22,7 @@ const OrdersList = (props) => {
             endDate={order.endDate}
             totalDays={order.totalDays}
             totalPrice={order.totalPrice}
-            rental={order.rental}
+            car={order.car}
             name={order.name}
             model={order.model}
             image={order.image}

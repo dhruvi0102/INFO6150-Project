@@ -6,12 +6,12 @@ const FleetList = (props) => {
 
     if(!props.fleet.length){
         return(
-            <div style={{textAlign: 'center'}}>We can't find any rentals right now</div>
+            <div style={{textAlign: 'center'}}>We can't find any cars right now</div>
         )
     }
 
     return (
-        <ul className='list-rental'>
+        <ul className='list-autos'>
             { 
             props.fleet.map( auto => {
                 return (
@@ -19,10 +19,10 @@ const FleetList = (props) => {
                     id={auto.id}
                     key={auto.id}
                     name={auto.name}
-                    rentalmodel={auto.rentalmodel}
-                    rentalType={auto.rentalType}
-                    rooms={auto.rooms}
-                    bathrooms={auto.bathroom}
+                    model={auto.model}
+                    carType={auto.carType}
+                    seats={auto.seats}
+                    gears={auto.gears}
                     clima={auto.clima}
                     image={auto.image}
                     price={auto.price}/>

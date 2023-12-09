@@ -19,10 +19,10 @@ const FleetList = (props) => {
                     id={auto.id}
                     key={auto.id}
                     name={auto.name}
-                    model={auto.model}
+                    rentalmodel={auto.rentalmodel}
                     rentalType={auto.rentalType}
-                    seats={auto.seats}
-                    gears={auto.gears}
+                    rooms={auto.rooms}
+                    bathrooms={auto.bathroom}
                     clima={auto.clima}
                     image={auto.image}
                     price={auto.price}/>

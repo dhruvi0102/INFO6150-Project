@@ -1,4 +1,4 @@
-.list-autos {
+.list-rental {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -11,7 +11,7 @@
 
 
 @media (max-width: 600px) {
-    .list-autos { 
+    .list-rental { 
        width: 100%;
        display: flex;
        flex-flow: column;

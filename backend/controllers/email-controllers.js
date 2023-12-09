@@ -37,8 +37,8 @@ const sendInvoiceEmail = async (req, res) => {
   const firstName = emailOrder.firstName;
   const lastName = emailOrder.lastName;
   const totalPrice = emailOrder.totalPrice.toFixed(2);
-  const rentalName = emailOrder.name;
-  const rentalModel = emailOrder.model;
+  const carName = emailOrder.name;
+  const carModel = emailOrder.model;
   const startDate = new Date(emailOrder.startDate).toLocaleDateString("de-DE");
   const endDate = new Date(emailOrder.endDate).toLocaleDateString("de-DE");
   const totalDays = emailOrder.totalDays;
@@ -46,8 +46,8 @@ const sendInvoiceEmail = async (req, res) => {
     firstName,
     lastName,
     totalPrice,
-    rentalName,
-    rentalModel,
+    carName,
+    carModel,
     startDate,
     endDate,
     totalDays,

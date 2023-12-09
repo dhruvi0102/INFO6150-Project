@@ -14,7 +14,7 @@ const orderSchema = new mongoose.Schema({
     model:{ type: String, required: true },
     image: { type: String, required: true },
     isPayNow: { type: Boolean, default: false },
-    rental: {type: mongoose.Types.ObjectId, required: true, ref: 'Rental'},
+    car: {type: mongoose.Types.ObjectId, required: true, ref: 'Car'},
     customer: {type: mongoose.Types.ObjectId, required: true, ref: 'User'}
 });
 

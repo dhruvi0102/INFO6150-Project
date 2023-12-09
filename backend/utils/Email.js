@@ -3,8 +3,8 @@ const sendEmail = ({
   firstName,
   lastName,
   totalPrice,
-  RentalName,
-  RentalModel,
+  carName,
+  carModel,
   to,
   startDate,
   endDate,
@@ -30,7 +30,7 @@ const sendEmail = ({
         html: `<h3>This is your Rent Invoice</h3>
         </br>
         <h4> Dear ${firstName} ${lastName}</h4>
-        <p>You have rented ${RentalName} ${RentalModel}</p>
+        <p>You have rented ${carName} ${carModel}</p>
         <p>for total ${totalDays} days - starting from ${startDate} to ${endDate}</p>
         <h3>Your total rent price is ${totalPrice} Dollars</h3>
         </br>

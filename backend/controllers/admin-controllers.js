@@ -2,7 +2,7 @@ const AdminUser = require("../models/admins");
 const jwt = require("jsonwebtoken");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
-const Rental = require("../models/rental");
+const Car = require("../models/car");
 const User = require("../models/user");
 
 require("dotenv").config();
@@ -73,7 +73,7 @@ const addAdmins = async (req, res) => {
   }
 };
 
-const addRentals = async (req, res) => {
+const addCars = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res
@@ -81,28 +81,28 @@ const addRentals = async (req, res) => {
       .json({ msg: "Invalid inputs, please check your data." });
   }
 
-  const { name, rentalmodel, rentalType, rooms, bathrooms, clima, price, qt, image } =
+  const { name, model, carType, seats, gears, clima, price, qt, image } =
     req.body;
   try {
-    const rental = new Rental({
+    const car = new Car({
       name,
-      rentalmodel,
-      rentalType,
-      rooms,
-      bathrooms,
+      model,
+      carType,
+      seats,
+      gears,
       clima,
       price,
       image,
       qt,
     });
 
-    const newRental = await rental.save();
-    res.status(201).json({ rental: newRental });
+    const newCar = await car.save();
+    res.status(201).json({ car: newCar });
   } catch (err) {
     console.error(err.message);
     res
       .status(500)
-      .send({ msg: "Creating a new rental entry failed, please try again" });
+      .send({ msg: "Creating a new car entry failed, please try again" });
   }
 };
 
@@ -191,7 +191,7 @@ const getAllUsers = async (req, res) => {
 module.exports = {
   loginAdmin: loginAdmin,
   addAdmins: addAdmins,
-  addRentals: addRentals,
+  addCars: addCars,
   blockUser: blockUser,
   getAllUsers: getAllUsers,
 };

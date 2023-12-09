@@ -1,18 +1,18 @@
 const express = require("express");
 const {
   addAdmins,
-  addRentals,
+  addCars,
   blockUser,
   loginAdmin,
   getAllUsers,
-} = require("../controllers/admin-controllers.js");
+} = require("../controllers/admin-controllers");
 
-const { verifyJWT } = require("../utils/AdminAuth.js");
+const { verifyJWT } = require("../utils/AdminAuth");
 
 const router = express.Router();
 
 router.post("/", addAdmins);
-router.post("/add-rental", verifyJWT, addRentals);
+router.post("/add-car", verifyJWT, addCars);
 router.post("/block-user", verifyJWT, blockUser);
 router.post("/login", loginAdmin);
 router.get("/getUsers", verifyJWT, getAllUsers);

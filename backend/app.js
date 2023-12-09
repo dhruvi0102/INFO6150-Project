@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const ConnectDB = require("./db");
 require("dotenv").config();
 
-const rentalRoutes = require("./routes/rental-routes");
+const carsRoutes = require("./routes/cars-routes");
 const usersRoutes = require("./routes/users-routes");
 const orderRoutes = require("./routes/orders-routes");
 const emailRoutes = require("./routes/email-routes");
@@ -32,9 +32,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/api/fleet", rentalRoutes);
+app.use("/api/fleet", carsRoutes);
 app.use("/api/users", usersRoutes);
-app.use("/api/booking", orderRoutes);
+app.use("/api/orders", orderRoutes);
 app.use("/api/emails", emailRoutes);
 app.use("/api/stripe", stripeRoutes);
 app.use("/api/admins", adminRoutes);

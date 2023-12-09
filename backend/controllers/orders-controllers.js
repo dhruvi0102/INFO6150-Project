@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const PDFDocument = require("pdfkit");
 
 const Order = require("../models/order");
-const Rental = require("../models/rental");
+const Car = require("../models/car");
 const User = require("../models/user");
 
 //Create new Order entry
@@ -17,7 +17,7 @@ const addOrder = async (req, res) => {
       .json({ msg: "Invalid inputs, please check your data." });
   }
 
-  const { firstName, lastName, startDate, endDate, rental, customer } = req.body;
+  const { firstName, lastName, startDate, endDate, car, customer } = req.body;
 
   let user;
   try {
@@ -35,21 +35,21 @@ const addOrder = async (req, res) => {
     return res.status(404).json({ msg: "Could not find user for this id." });
   }
 
-  let searchedRental;
+  let searchedCar;
   try {
-    searchedRental = await Rental.findById(rental);
+    searchedCar = await Car.findById(car);
   } catch (err) {
     console.errors(err.message);
     return res.status(500).send({ msg: "Server Error" });
   }
 
-  if (!searchedRental) {
-    return res.status(404).json({ msg: "Could not find rental for this id." });
+  if (!searchedCar) {
+    return res.status(404).json({ msg: "Could not find car for this id." });
   }
 
   //Calculate days and a total price for that order
   const days = Math.abs(endDate.getDate() - startDate.getDate());
-  const price = days * searchedRental.price;
+  const price = days * searchedCar.price;
 
   const order = new Order({
     firstName,
@@ -59,11 +59,11 @@ const addOrder = async (req, res) => {
     totalDays: days,
     totalPrice: price,
     fixedPrice: price,
-    name: searchedRental.name,
-    rentalmodel: searchedRental.rentalmodel,
-    image: searchedRental.image,
+    name: searchedCar.name,
+    model: searchedCar.model,
+    image: searchedCar.image,
     isPayNow: false,
-    rental,
+    car,
     customer,
   });
 
@@ -73,12 +73,12 @@ const addOrder = async (req, res) => {
     //Push order in Users orders array
     user.orders.push(order);
     await user.save();
-    //Decrement avaliable rentals by one
-    const newRental = await Rental.findByIdAndUpdate(
-      { _id: order.rental },
+    //Decrement avaliable cars by one
+    const newCar = await Car.findByIdAndUpdate(
+      { _id: order.car },
       { $inc: { qt: -1 } }
     );
-    await newRental.save();
+    await newCar.save();
   } catch (err) {
     console.error(err);
     return res
@@ -136,7 +136,7 @@ const deleteOrder = async (req, res) => {
   try {
     orederToDelete = await Order.findById(req.params.id)
       .populate("customer")
-      .populate("rental");
+      .populate("car");
   } catch (err) {
     console.error(err.message);
     return res.status(500).send({ msg: "Server Error, could not delete order" });
@@ -150,12 +150,12 @@ const deleteOrder = async (req, res) => {
 
 
   try {
-    //Increment rental qt field +1 when the rental is back (order is deleted)
-    const newRental = await Rental.findByIdAndUpdate(
-      { _id: orederToDelete.rental._id },
+    //Increment car qt field +1 when the car is back (order is deleted)
+    const newCar = await Car.findByIdAndUpdate(
+      { _id: orederToDelete.car._id },
       { $inc: { qt: 1 } }
     );
-    await newRental.save();
+    await newCar.save();
     await orederToDelete.remove();
     orederToDelete.customer.orders.pull(orederToDelete);
     await orederToDelete.customer.save();

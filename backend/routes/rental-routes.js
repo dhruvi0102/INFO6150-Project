@@ -23,7 +23,7 @@ router.post('/',
 router.get('/', rentalsControllers.getAllRentals);
 //Get by Id
 router.get('/:id', rentalsControllers.getRentalById);
-//Offers Cars - landing page top cars
+//Offers rentals - landing page top rentals
 router.get('/offers/rentals', rentalsControllers.getOfferRentals);
 //Sort by Name/Model
 router.get('/sort/:name', rentalsControllers.getRentalByName);

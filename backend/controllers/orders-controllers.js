@@ -60,7 +60,7 @@ const addOrder = async (req, res) => {
     totalPrice: price,
     fixedPrice: price,
     name: searchedRental.name,
-    model: searchedRental.model,
+    rentalmodel: searchedRental.rentalmodel,
     image: searchedRental.image,
     isPayNow: false,
     rental,

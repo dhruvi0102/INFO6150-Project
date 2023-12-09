@@ -60,6 +60,42 @@ const About = (props) => {
           </div>
         </div>
       </div>
+      <div className='Team text-center'>
+        <h1>Our Team</h1>
+        <div className='Team_Container'>
+          <div className='col-md-2'>
+            <img
+              className='img-fluid img-thumbnail'
+              src='https://media.licdn.com/dms/image/D4E35AQHqyh6zEq__FQ/profile-framedphoto-shrink_400_400/0/1670389939603?e=1702522800&v=beta&t=Kitga29iFzG0XoGDxJ7Yq9hPotGUAguZZMvFuUL_m2U'
+              alt=''
+            />
+          </div>
+          <div className='col-md-2'>
+            <img
+              className='img-fluid img-thumbnail'
+              src='https://media.licdn.com/dms/image/D4E35AQFQbh7J88zdeQ/profile-framedphoto-shrink_400_400/0/1685714498362?e=1702522800&v=beta&t=NTcIh09Wpr_WaV4NzwjBy89zsbqCvdx7qnewKKd-4JA'
+              alt=''
+            />
+          </div>
+          <div className='col-md-2'>
+            <img
+              className='img-fluid img-thumbnail'
+              src='https://media.licdn.com/dms/image/D4E35AQF47LhjPFGbIA/profile-framedphoto-shrink_400_400/0/1681702794146?e=1702522800&v=beta&t=Vi8NsnPQ_ywJkAh3DoiuX5dpAipTjXcJtDOSgn9XpJE'
+              alt=''
+            />
+          </div>
+          <div className='col-md-2'>
+            <img
+              className='img-fluid img-thumbnail'
+              src='https://media.licdn.com/dms/image/D4E03AQFz5vogYZK2Zw/profile-displayphoto-shrink_400_400/0/1676610478628?e=1707350400&v=beta&t=CE5sPB0XQQX_bTTpLmkLB1PUyJgmk8wevwUVMDUH2lU'
+              width='500'
+              height='600'
+              alt=''
+            />
+          </div>
+         
+        </div>
+      </div>
     </div>
   );
 };

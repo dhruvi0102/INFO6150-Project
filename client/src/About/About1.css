@@ -82,15 +82,16 @@
 
 .Team_Container {
   position: absolute;
-  left: 3%;
+  /* left: 3%; */
 }
 .Team {
   position: relative;
+  padding-left: 150px;
 }
 
 .Team h1 {
   margin-bottom: 5%;
-  color: white;
+  color: rgb(8, 1, 1);
   font-family: 'Source Sans Pro', sans-serif;
 }
 

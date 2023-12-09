@@ -1,31 +1,40 @@
 const express = require("express");
 const { check } = require("express-validator");
 const { verifyJWT } = require("../utils/UserAuth");
-const houseBookingController = require("../controllers/house-booking-controllers");
+const ordersController = require("../controllers/orders-controllers");
 const router = express.Router();
 
-// Add new booking for a house
+//Add new order
 router.post(
   "/",
   [
-    check("startDate", "Please enter a valid start date").isISO8601().toDate(),
-    check("endDate", "Please enter a valid end date").isISO8601().toDate(),
-    check("totalPrice", "Please enter a valid total price").isNumeric(),
-    check("guests", "Please enter a valid number of guests").isInt({ min: 1 }),
-    // Other validation checks as needed
+    check("firstName", "Please enter a valid first name")
+      .not()
+      .isEmpty()
+      .trim(),
+    check("lastName", "Please enter a valid last name").not().isEmpty().trim(),
+    check("endDate", "Please enter a valid number of seats")
+      .isISO8601()
+      .toDate(),
+    check("startDate", "Please enter a valid date")
+      .isISO8601()
+      .toDate()
+      .custom((value, { req }) => {
+        if (value <= Date.now()) {
+          throw new Error("Invalide date");
+        }
+        return true;
+      }),
   ],
-  houseBookingController.bookHouse
+  ordersController.addOrder
 );
-
-// Get booking details for a specific house
-router.get("/house/:houseId", houseBookingController.getHouseBookings);
-
-// Get all bookings made by a user
-router.get("/user/:userId", houseBookingController.getUserBookings);
-
-// Cancel a booking for a house
-router.patch("/cancel/:bookingId", houseBookingController.cancelBooking);
+//Get order by Id
+router.get("/:id", ordersController.getOrderById);
+//Get all orders for user(be user id)
+router.get("/user/:id", ordersController.getUsersOrders);
+//Delete order
+router.delete("/:id", ordersController.deleteOrder);
+//Change price when pay now
+router.patch("/option/:id", ordersController.updatePayOption);
 
 module.exports = router;
-
-

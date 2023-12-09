@@ -11,12 +11,12 @@ import axios from '../axios';
 import './landing.css';
 import FleetList from '../Fleet/components/FleetList';
 import PreLoader from '../shared/components/PreLoader/PreLoader';
-import RentalInforCard from '../shared/components/RentalInfoCard/RentalInfoCard';
+import RentalInfoCard from '../shared/components/RentalInfoCard/RentalInfoCard';
 import Layout from '../shared/components/Layout/Layout';
-import Cabin from '../assets/cabin.jpeg';
-import MansionRental from '../assets/mansionhouse.jpeg';
-import BeachFront from '../assets/beachfronthouse.jpeg';
-//import myImage from '../assets/treeRental.jpeg';
+import Cabin from '../assets/cabin1.jpeg';
+import MansionRental from '../assets/Mansion1.jpeg';
+import BeachFront from '../assets/beachfronthouse2.jpeg';
+import myVideo from '../assets/TravelVideo.mp4';
 import { ThemeContext, themes } from '../shared/contexts/ThemeContext';
 
 const LandingPage = () => {
@@ -41,10 +41,10 @@ const LandingPage = () => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get('/fleet/offers/Rental')
+      .get('/fleet/offers/Rentals')
       .then((res) => {
         setIsLoading(false);
-        setOffers(res.data.rental);
+        setOffers(res.data.rentals);
       })
       .catch((err) => {
         setIsLoading(false);
@@ -64,24 +64,26 @@ const LandingPage = () => {
     <Layout>
       <div className='bodyContent'>
         <div className='topContainer'>
-          <img src="../assets/treeRental.jpeg" alt="treeRental image"></img>
-          <div className='content'>
+          <video className='video-container' autoPlay muted loop id='video'>
+            <source src={myVideo} type='video/mp4' />
+          </video>
+          {/*<div className='content'>
             <h1 ref={(el) => (title = el)} className='Rental-title'>
               Welcome to HouseHop
             </h1>
             <p ref={(el) => (subtitle = el)} className='sub-title'>
               Stay and enjoy vacation Carefree
             </p>
-          </div>
+  </div>*/}
         </div>
 
         <div
           className='headingtop'
-          style={{ backgroundImage: `url(${currentTheme.imagePeecheki})` }}
+          style={{ backgroundColor: 'white' }}
         >
           <div className='space'></div>
           <h1 ref={(el) => (title = el)} className='rental-title'>
-            Low weekly rates. Avaliable right now.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Low weekly rates. Avaliable right now.
           </h1>
           <p ref={(el) => (subtitle = el)} className='subtitle'>
             Cancel at any time
@@ -108,21 +110,21 @@ const LandingPage = () => {
           style={{ backgroundColor: currentTheme.cardBorderBottomColor }}
         />
         <section className='sorting-section'>
-          <RentalInforCard
+          <RentalInfoCard
             src={Cabin}
             alt={'Cabin'}
             clicked={onSearchtHandler}
             name={'Cabin'}
             text={'Check our Cabins'}
           />
-          <RentalInforCard
+          <RentalInfoCard
             src={MansionRental}
             alt={'Mansion'}
             clicked={onSearchtHandler}
             name={'mension'}
             text={'Check our Mansions'}
           />
-          <RentalInforCard
+          <RentalInfoCard
             src={BeachFront}
             alt={'beachfront'}
             clicked={onSearchtHandler}

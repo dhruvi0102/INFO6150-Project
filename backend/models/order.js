@@ -1,15 +1,21 @@
 const mongoose = require('mongoose');
 
-// Booking schema
-const bookingSchema = new mongoose.Schema({
+
+//Order schema
+const orderSchema = new mongoose.Schema({
+    firstName: { type: String, required: true, minlength: 2 },
+    lastName: { type: String, required: true, minlength: 2 },
     startDate: { type: Date, required: true },
     endDate: { type: Date, required: true },
-    totalPrice: { type: Number, required: true },
-    guests: { type: Number, required: true },
-    message: { type: String },
-    status: { type: String, enum: ['Pending', 'Confirmed', 'Cancelled'], default: 'Pending' },
-    house: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'House' },
-    guest: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' }
+    totalDays: {type: Number, required: true },
+    totalPrice: {type: Number, required: true },
+    fixedPrice: {type: Number, required: true },
+    name:{ type: String, required: true },
+    model:{ type: String, required: true },
+    image: { type: String, required: true },
+    isPayNow: { type: Boolean, default: false },
+    rental: {type: mongoose.Types.ObjectId, required: true, ref: 'Rental'},
+    customer: {type: mongoose.Types.ObjectId, required: true, ref: 'User'}
 });
 
-module.exports = mongoose.model('Booking', bookingSchema);
+module.exports = mongoose.model('Order', orderSchema)

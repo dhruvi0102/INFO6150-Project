@@ -73,7 +73,7 @@ const addAdmins = async (req, res) => {
   }
 };
 
-const addCars = async (req, res) => {
+const addRentals = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res
@@ -81,28 +81,28 @@ const addCars = async (req, res) => {
       .json({ msg: "Invalid inputs, please check your data." });
   }
 
-  const { name, model, carType, seats, gears, clima, price, qt, image } =
+  const { name, rentalmodel, rentalType, rooms, bathrooms, clima, price, qt, image } =
     req.body;
   try {
-    const car = new Car({
+    const rental = new Rental({
       name,
-      model,
-      carType,
-      seats,
-      gears,
+      rentalmodel,
+      rentalType,
+      rooms,
+      bathrooms,
       clima,
       price,
       image,
       qt,
     });
 
-    const newCar = await car.save();
-    res.status(201).json({ car: newCar });
+    const newRental = await rental.save();
+    res.status(201).json({ rental: newRental });
   } catch (err) {
     console.error(err.message);
     res
       .status(500)
-      .send({ msg: "Creating a new car entry failed, please try again" });
+      .send({ msg: "Creating a new rental entry failed, please try again" });
   }
 };
 
@@ -191,7 +191,7 @@ const getAllUsers = async (req, res) => {
 module.exports = {
   loginAdmin: loginAdmin,
   addAdmins: addAdmins,
-  addCars: addCars,
+  addRentals: addRentals,
   blockUser: blockUser,
   getAllUsers: getAllUsers,
 };

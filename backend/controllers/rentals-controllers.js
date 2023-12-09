@@ -2,7 +2,7 @@ const { validationResult } = require("express-validator");
 
 const Rental = require("../models/rental");
 
-//Create a car entry
+//Create a rental entry
 const postRental = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -43,7 +43,7 @@ const getAllRentals = async (req, res) => {
     rentals = await Rental.find({ qt: { $gt: 0 } }).sort({ price: 1 });
   } catch (err) {
     console.error(err.message);
-    res.status(500).send({ msg: "Fatching rentals failed, please try again" });
+    res.status(500).send({ msg: "Fetching rentals failed, please try again" });
   }
   res.json({ rentals: rentals.map((rental) => rental.toObject({ getters: true })) });
 };
@@ -88,7 +88,7 @@ const getRentalByName = async (req, res) => {
     rentals = await Rental.find({
       $or: [
         { name:  str2 },
-        { model:str2 },
+        { rentalmodel:str2 },
         { rentalType: str2 },
       ],
       qt: { $gt: 1 },

@@ -34,7 +34,7 @@ const FleetSearchPage = () => {
              .then(res => {
                 
                 setIsLoading(false);
-                setSearched(res.data.rental);
+                setSearched(res.data.cars);
                 console.log(res);
              }).catch(err => {
                 setIsLoading(false);
@@ -57,7 +57,7 @@ const FleetSearchPage = () => {
     return(
         <Layout>
             <div className='title-search'  >
-                <h1 ref={ el => ( searchTitle = el )} >don't dream it, Drive it!</h1>
+                <h1 ref={ el => ( searchTitle = el )} >don't dream it, rent it!</h1>
                 <p className='line' style={{backgroundColor:currentTheme.cardBorderBottomColor}}/>
             </div>
             {offers}

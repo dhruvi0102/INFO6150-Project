@@ -1,4 +1,4 @@
-img {
+video {
   position: absolute;
 
   width: 100vw;
@@ -9,10 +9,10 @@ img {
   /* max-height: 828px; */
 }
 
-.content {
-  /* background-color: black; */
+/*.content {
+  background-color: black;
   position: relative;
-  color: white;
+  color: black;
   overflow: hidden;
 }
 
@@ -24,12 +24,13 @@ img {
 .content p {
   font-size: 300%;
   text-align: center;
-}
+}*/
 
 .topContainer {
-  background-color: black;
+  background-color: white;
   overflow: hidden;
   height: 100vh;
+  margin: 0 ;
 }
 
 @media screen and (max-width: 501px) {

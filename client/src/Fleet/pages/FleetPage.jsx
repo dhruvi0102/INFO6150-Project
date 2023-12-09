@@ -53,7 +53,7 @@ const FleetPage = () => {
         axios.get('/fleet')
              .then(res => {
                 setIsLoading(false);
-                dispatch({type: 'GET', fleet: res.data.rental})
+                dispatch({type: 'GET', fleet: res.data.rentals})
              }).catch(err => {
                 setIsLoading(false);
                 console.log(err);
@@ -68,7 +68,7 @@ const FleetPage = () => {
              .then(res => {
                
                 setIsLoading(false);
-                setSearch(res.data.rental);
+                setSearch(res.data.rentals);
                 setOnSearch(true);
              }).catch(err => {
                 setIsLoading(false);

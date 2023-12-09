@@ -19,26 +19,26 @@ const SingleFleetItem = (props) => {
       <img onClick={onToRentMove} src={props.image} alt="rental"  />
       <p className="name">
         {props.name}<br></br>
-        <span> {props.model}</span>
+        <span> {props.rentalmodel}</span>
       </p>
       <div className="options">
         <p style={{ textTransform: "capitalize" }} className="rental-type">
           <span>
             <MdCabin />
           </span>{" "}
-          {props.carType}
+          {props.rentalType}
         </p>
         <p className="rental-type">
           <span>
             <MdBeachAccess />
           </span>{" "}
-          {props.seats}
+          {props.rooms}
         </p>
         <p className="rental-type">
           <span>
             <MdCastle />
           </span>{" "}
-          {props.gears}
+          {props.bathroom}
         </p>
         <p className="rental-type">
           <span>

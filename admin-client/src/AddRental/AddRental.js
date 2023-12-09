@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getCookie } from "../utils/cookie-helper";
 
-const AddCar = () => {
+const AddRental = () => {
   const [creds, setcreds] = useState({
     name: "The One",
     rentalModel: "book@one.com",
@@ -63,7 +63,7 @@ const AddCar = () => {
           onChange={onChange}
           className="mt-2 p-3 w-96 bg-transparent border border-black"
           name="rentalType"
-          value={creds.carType}
+          value={creds.rentalType}
           required={true}
         />
         <div>Rooms</div>
@@ -120,4 +120,4 @@ const AddCar = () => {
   );
 };
 
-export default AddCar;
+export default AddRental;

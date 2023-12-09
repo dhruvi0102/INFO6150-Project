@@ -8,8 +8,8 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
   const navigate = useNavigate();
   const [creds, setcreds] = useState({
-    email: "rushabh@gmail.com",
-    password: "Rushabh123@",
+    email: "",
+    password: "",
   });
 
   const onChange = (e) => {

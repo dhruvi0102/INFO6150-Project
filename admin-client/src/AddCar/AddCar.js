@@ -4,17 +4,17 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getCookie } from "../utils/cookie-helper";
 
-const AddRental = () => {
+const AddCar = () => {
   const [creds, setcreds] = useState({
-    name: "The One",
-    rentalModel: "book@one.com",
-    rentalType: "cabin",
-    rooms: "4",
-    bathrooms: "2",
+    name: "Tesla Model S",
+    model: "book@tesla.com",
+    carType: "coupe",
+    seats: "4",
+    gears: "Automatic",
     price: "499.99",
-    qt: "3",
+    qt: "5",
     image:
-      "https://www.pexels.com/photo/beige-bungalow-house-259588/",
+      "https://www.google.com/imgres?imgurl=https%3A%2F%2Ftesla-cdn.thron.com%2Fdelivery%2Fpublic%2Fimage%2Ftesla%2F3863f3e5-546a-4b22-bcbc-1f8ee0479744%2FbvlatuR%2Fstd%2F1200x628%2FMX-Social&imgrefurl=https%3A%2F%2Fwww.tesla.com%2Fmodelx&tbnid=Xm2lDJDSvSzXnM&vet=12ahUKEwitm-j-i-v7AhWoGFkFHdREB_wQMygBegUIARDmAQ..i&docid=nAmbVd5MEZDJgM&w=1200&h=628&q=tesla&ved=2ahUKEwitm-j-i-v7AhWoGFkFHdREB_wQMygBegUIARDmAQ",
   });
 
   const onChange = (e) => {
@@ -26,13 +26,13 @@ const AddRental = () => {
   const submit = async () => {
     try {
       const cookie = getCookie("token");
-      const data = await axios.post("/add-rental", creds, {
+      const data = await axios.post("/add-car", creds, {
         headers: {
           Authorization: cookie,
         },
       });
       console.log(data.data);
-      toast.success("Rental added successfully");
+      toast.success("Car added successfully");
     } catch (error) {
       toast.error("Some Error Occured ! Please try again");
     }
@@ -41,7 +41,7 @@ const AddRental = () => {
   return (
     <div className="bg-[#222f3e] h-[100vh] flex justify-center items-center ">
       <div className="p-5 text-white bg-[#4834d4]">
-        <div className="mb-5 text-center">Add a Rental</div>
+        <div className="mb-5 text-center">Add a Car</div>
         <div>Name</div>
         <input
           onChange={onChange}
@@ -50,36 +50,36 @@ const AddRental = () => {
           value={creds.name}
           required={true}
         />
-        <div>Rental Model</div>
+        <div>Model</div>
         <input
           onChange={onChange}
           className="mt-2 p-3 w-96 bg-transparent border border-black"
-          name="rentalModel"
-          value={creds.rentalmodel}
+          name="model"
+          value={creds.model}
           required={true}
         />
-        <div>Rental Type</div>
+        <div>Car Type</div>
         <input
           onChange={onChange}
           className="mt-2 p-3 w-96 bg-transparent border border-black"
-          name="rentalType"
-          value={creds.rentalType}
+          name="carType"
+          value={creds.carType}
           required={true}
         />
-        <div>Rooms</div>
+        <div>Seats</div>
         <input
           onChange={onChange}
           className="mt-2 p-3 w-96 bg-transparent border border-black"
-          name="rooms"
-          value={creds.rooms}
+          name="seats"
+          value={creds.seats}
           required={true}
         />
-        <div>Bathrooms</div>
+        <div>Gears</div>
         <input
           onChange={onChange}
           className="mt-2 p-3 w-96 bg-transparent border border-black"
-          name="bathrooms"
-          value={creds.bathrooms}
+          name="gears"
+          value={creds.gears}
           required={true}
         />
         <div>Price</div>
@@ -120,4 +120,4 @@ const AddRental = () => {
   );
 };
 
-export default AddRental;
+export default AddCar;

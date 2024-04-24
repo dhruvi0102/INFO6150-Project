@@ -1,7 +1,7 @@
 # CAR-O-PEDIA
 
 
-React, Node, MongoDB, Express - MERN Stack - "Rant-a-car Single Page App"
+React, Node, MongoDB, Express - MERN Stack - "Rent-a-car Single Page App"
 
 * top 3 offers (landing page)
 * 3 main types subcategory (landing page)
